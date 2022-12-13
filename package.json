@@ -1,7 +1,7 @@
 {
-  "name": "ai-app",
+  "name": "imagai",
   "version": "1.0.0",
-  "description": "",
+  "description": "Generate images with a text easily",
   "main": "index.js",
   "scripts": {
     "start": "node index",

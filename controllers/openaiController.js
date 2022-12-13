@@ -9,13 +9,7 @@ const generateImage = async (req, res) => {
   const { prompt, size } = req.body;
 
   const imageSize =
-    size === "small"
-      ? "256x256"
-      : size === "medium"
-      ? "512x512"
-      : size === "large"
-      ? "1024x1024"
-      : "1024x1024";
+    size === "small" ? "256x256" : size === "medium" ? "512x512" : "1024x1024";
 
   try {
     const response = await openai.createImage({
@@ -28,7 +22,6 @@ const generateImage = async (req, res) => {
 
     res.status(200).json({
       success: true,
-      message: "Image generated successfully",
       data: imageUrl,
     });
   } catch (error) {
@@ -41,7 +34,7 @@ const generateImage = async (req, res) => {
 
     res.status(400).json({
       success: false,
-      error: "Image generation unsuccessful",
+      error: "The image could not be generated",
     });
   }
 };
